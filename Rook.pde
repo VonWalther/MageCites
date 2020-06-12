@@ -4,6 +4,7 @@ class Rook{
   private float size;
   private int xPos;
   private int yPos;
+  private int moveSize = 30;
   
   Rook(color rookColor, float size, int x, int y){
     this.rColor = rookColor;
@@ -19,7 +20,19 @@ class Rook{
   }  
   
   private void moveDown(){
-    yPos += 30;
+    yPos += moveSize;
+  }
+  
+  private void moveUp(){
+    yPos -= moveSize;
+  }
+  
+  private void moveRight(){
+    xPos += moveSize;
+  }
+  
+  private void moveLeft(){
+    xPos -= moveSize;
   }
   
   

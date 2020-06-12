@@ -1,3 +1,4 @@
+final boolean DEBUG = true;
 GameField gameField;
 Rook gamePiece_1, gamePiece_2;
 InputHandler inputHandler;
