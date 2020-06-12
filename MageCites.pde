@@ -13,13 +13,21 @@ void setup(){
   //Creat the InputHnadler and Bind the keys to commands.
   inputHandler = new InputHandler();
   inputHandler.bindBtDwnArrow(new MoveDown());
+  inputHandler.bindBtUpArrow(new MoveUp());
+  inputHandler.bindBtRghArrow(new MoveRight());
+  inputHandler.bindBtLftArrow(new MoveLeft());
 }
 
 void draw(){
   gameField.drawField();
   gamePiece_1.drawRook();
   gamePiece_2.drawRook();
-  inputHandler.handleInput();
+  
+  Command command = inputHandler.handleInput();
+  if(command != null){
+    command.execute(gamePiece_1);
+    command.execute(gamePiece_2);
+  }
   
 }
 
